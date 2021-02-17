@@ -1,0 +1,83 @@
+<%- include('partials/__header'); -%>
+<%- include('partials/__nav-bar'); -%>
+<link rel="stylesheet" href="betkanyon.css">
+<form class="form-search" action="/betkanyon" method="POST">
+    <input placeholder="Search" type="text" name="gameName" value="">
+    <button class="btn btn-primary get">GET</button>
+</form>
+
+
+<div class="game-wrapper">
+    <div class="game-name-container">
+        <% data.forEach(data =>{ %>
+        <form class="form " action="/postbk" method="POST">
+            <% if(data.HSh != 0){%>
+            <div class="text-holder">
+                <!-- If the logo number is empty, remove! -->
+
+                <div class="team-logo">
+                    <div class="logo">
+                        <div class="team-logos-holder">
+                            <img src=//cdn-sp.apidigi.com/assets/team-logos/<%=data.HSh%>.png alt="">
+                        </div>
+                        <div class="team-logos-holder">
+                            <img src=//cdn-sp.apidigi.com/assets/team-logos/<%=data.ASh%>.png alt="">
+                        </div>
+
+                    </div>
+                    <h1 class="select"><%= data.HT +" - "+ data.AT%></h1>
+                </div>
+            </div>
+
+
+            <div class="input-holder">
+                <input type="text" name="bkdata" value="<%= data.Id %>">
+                <button id="choose" class="btn btn-success">choose</button>
+            </div>
+        </form>
+        <%  } %>
+        <% }) %>
+    </div>
+
+    <div hidden class="stats">
+        <h2>HOST: <%= host %> </h2>
+        <h2>GUEST: <%= guest %> </h2>
+        <h2>1: <%= hostOdd %> </h2>
+        <h2>x: <%= drawOdd %> </h2>
+        <h2>2: <%= guestOdd %> </h2>
+        <img src=//cdn-sp.apidigi.com/assets/team-logos/<%=hostLogo%>.png alt="">
+        <img src=//cdn-sp.apidigi.com/assets/team-logos/<%=guestLogo%>.png alt="">
+        <h2><%= gameDate %> </h2>
+        </h2>
+    </div>
+
+
+   
+
+
+</div>
+
+
+
+
+
+<%- include('partials/__footer'); -%>
+<!-- <script>
+    const get = document.querySelector(".get");
+    get.onclick = () => {
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                team: value.value,
+                num: interval
+
+            })
+        }
+
+        fetch("/query", options);
+    }
+    
+</script> -->

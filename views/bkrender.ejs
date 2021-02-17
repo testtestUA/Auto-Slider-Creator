@@ -1,0 +1,322 @@
+<%- include('partials/__header'); -%>
+<%- include('partials/__nav-bar'); -%>
+
+
+
+<div class="wrapper">
+    <div class="button-wrapper">
+        <button class=" change btn btn-success">CHANGE GAME</button>
+        <input class="zoom-value" type="range" name="" id="" min="400" max="800" value="400">
+        <button class="orderBtn btn btn-primary">CHANGE ORDER</button>
+        <button class="print btn btn-warning">PRINT AS IMAGE</button>
+    </div>
+    <div class="banner-render">
+        <!-- Banner total dimension is 1200 * 336 -->
+        <div class="banner-container">
+            <div class="left-side">
+                <!-- League holder 90 * 40 -->
+                <div class="league-logo">
+                    <img src="" alt="">
+                </div>
+                <!-- Date text 20px -->
+                <div class="date">
+                    <p contenteditable="true"><%= gameDate %></p>
+                </div>
+                <!-- Team names 36px - Metropolis bold -->
+                <div class="team-names">
+                    <p contenteditable="true" class="orange"><%= host %></p>
+                    <p contenteditable="true" class="dark"><%= guest %></p>
+                </div>
+                <!-- Total area is 168*55 -->
+                <div class="team-logos">
+                    <!-- Logos 55*55-->
+                    <img class="team-logo-1" src="https://cdn-sp.kertn.net/assets/team-logos/<%=hostLogo%>.png" alt="">
+                    <!-- VS 24px -->
+                    <p>VS</p>
+                    <img class="team-logo-2" src="https://cdn-sp.kertn.net/assets/team-logos/<%=guestLogo%>.png"
+                        alt="">
+                </div>
+                <!-- Odds total area 222*38-->
+                <div class="team-odds">
+                    <!-- Odd per each 64*38-->
+                    <div class="odd">
+                        <p contenteditable="true"> <%= hostOdd %></p>
+                    </div>
+                    <div class="odd">
+                        <p contenteditable="true"> <%= drawOdd %></p>
+                    </div>
+                    <div class="odd">
+                        <p contenteditable="true"> <%= guestOdd %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="team-player drag1">
+                    <!-- <button class="btn btn-primary click">Change</button> -->
+                    <img class="player1-image zoom" src="player-1.png" alt="">
+                </div>
+                <div class="team-player drag2">
+                    <!-- <button class="btn btn-primary click">Change</button> -->
+                    <img class="player2-image zoom" src="player-1.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="all">
+            <div class="input-container">
+                <input class="value" type="text" placeholder="team name">
+                <button class="query btn btn-primary">SEARCH</button>
+                <button class="status btn btn-success">NOW</button>
+            </div>
+            
+
+            <div class="image-containers">
+                <!-- <img class="loader" src="loader.svg" alt=""> -->
+            </div>
+            <button class=" back btn btn-danger">back</button>
+            <button class="next btn btn-success">next</button>
+           <h1 class="page-number">1</h1>
+        </div>
+
+    </div>
+
+    <div class="image-container">
+        <img class="testimg" src="" alt="">
+    </div>
+
+    <section>
+        <banner class="grid">
+            <article>
+                <div class="league-logo">
+                    <img src="" alt="">
+                </div>
+                <!-- Date text 20px -->
+                <div class="date">
+                    <p contenteditable="true"><%= gameDate %></p>
+                </div>
+                <!-- Team names 36px - Metropolis bold -->
+                <div class="team-names">
+                    <p contenteditable="true" class="orange"><%= host %></p>
+                    <p contenteditable="true" class="dark"><%= guest %></p>
+                </div>
+                <!-- Total area is 168*55 -->
+                <div class="team-logos">
+                    <!-- Logos 55*55-->
+                    <img class="team-logo-1" src="http://cdn-sp.apidigi.com/assets/team-logos/<%=hostLogo%>.png" alt="">
+                    <!-- VS 24px -->
+                    <p>VS</p>
+                    <img class="team-logo-2" src="http://cdn-sp.apidigi.com/assets/team-logos/<%=guestLogo%>.png"
+                        alt="">
+                </div>
+                <!-- Odds total area 222*38-->
+                <div class="team-odds">
+                    <!-- Odd per each 64*38-->
+                    <div class="odd">
+                        <p contenteditable="true"> <%= hostOdd %></p>
+                    </div>
+                    <div class="odd">
+                        <p contenteditable="true"> <%= drawOdd %></p>
+                    </div>
+                    <div class="odd">
+                        <p contenteditable="true"> <%= guestOdd %></p>
+                    </div>
+
+
+            </article>
+            <div class="players">
+                <div class="team-m-player drag3">
+                    <!-- <button class="btn btn-primary click">Change</button> -->
+                    <img class="player3-image zoom" src="player-1.png" alt="">
+                </div>
+                <div class="team-m-player drag4">
+                    <!-- <button class="btn btn-primary click">Change</button> -->
+                    <img class="player4-image zoom" src="player-1.png" alt="">
+                </div>
+            </div>
+</div>
+</banner>
+
+</section>
+<!-- Sport/UpcomingDetails/6618354/Lille-AC-Milan -->
+
+
+<h1 class="url">
+   
+</h1>
+<div class="saved-image">
+</div>
+
+</div>
+
+
+
+
+<%- include('partials/__footer'); -%>
+<script>
+    const getTest = document.querySelector(".getTest");
+    const player1 = document.querySelector(".player")
+    const player2 = document.querySelector(".drag2")
+    const player4 = document.querySelector(".drag4")
+    const image = document.querySelector(".image-container")
+    const testimg = document.querySelector(".testimg");
+    const toggleOrder = document.querySelector(".orderBtn");
+    const url = document.querySelector(".url");
+    const pageNum = document.querySelector(".page-number") 
+    let value = document.querySelector(".value");
+
+    //Declare player holdes. 
+    const playerCon1 = document.querySelector(".player1-image");
+    const playerCon2 = document.querySelector(".player2-image");
+    const playerCon3 = document.querySelector(".player3-image");
+    const playerCon4 = document.querySelector(".player4-image");
+    const status = document.querySelector(".status");
+    const next = document.querySelector(".next");
+    const back = document.querySelector(".back");
+    const containers = document.querySelector(".image-containers");
+
+    url.innerHTML =  "Sport/UpcomingDetails/<%= gameId %>/<%= host.replace( " " , "-") %>-<%= guest.replace( " " , "-") %>"
+
+    //If on hover of players, show the bordes.
+    function border(holder){
+        
+        holder.onmouseover = () => {
+            holder.style.border="solid 1px red";
+        }
+        holder.onmouseleave = () => {
+            holder.style.border="none"
+        }
+    }
+    
+   border(playerCon1);
+   border(playerCon2);
+   border(playerCon3);
+   border(playerCon4);
+
+    let playerVar = playerCon1;
+    let playerVar2 = playerCon3;
+    let interval = 1;
+    value.value = "<%= host %>"
+
+    
+
+    next.addEventListener("click", ()=>{
+        interval++;
+        pageNum.innerHTML = interval;
+        clear()
+        call()
+    })
+
+    back.addEventListener("click", ()=>{
+        if(interval > 1) {
+            interval--;
+            pageNum.innerHTML = interval;
+            clear()
+            call()
+        }
+    })
+    
+
+    playerCon1.addEventListener("click", () => {
+        playerVar = playerCon1
+        playerVar2 = playerCon3
+        status.innerText = "<%= host %>"
+        value.value = "<%= host %>"
+        status.classList.toggle("btn-danger")
+    })
+    playerCon1.addEventListener("dblclick", () => {
+        interval = 1;
+        pageNum.innerHTML = interval;
+        clear()
+        call()
+    })
+    playerCon2.addEventListener("click", () => {
+        playerVar = playerCon2
+        playerVar2 = playerCon4
+        status.innerText = "<%= guest %>"
+        value.value = "<%= guest %>"
+        status.classList.toggle("btn-danger")
+
+    })
+    playerCon2.addEventListener("dblclick", () => {
+        interval = 1;
+        pageNum.innerHTML = interval;
+        clear()
+        call()
+    })
+    toggleOrder.addEventListener("click", () => {
+        player2.classList.toggle("order");
+        player4.classList.toggle("order");
+    })
+    //Fotty Query
+    const query = document.querySelector(".query");
+    query.addEventListener("click", () => {
+        clear()
+        call()
+    })
+    //Functıons
+    function clear() {
+        if (allPlayers) {
+            const playersAll = document.querySelectorAll(".playersAll")
+            playersAll.forEach(players => {
+                players.remove()
+            });
+        }
+    }
+   
+    const allPlayers = document.querySelectorAll(".playersAll");
+    // const loader = document.querySelector(".loader");
+    // loader.style.display="flex";
+    containers.style.display = 'flex';
+    async function call() {
+
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                team: value.value,
+                num: interval
+
+            })
+        }
+
+        fetch("/query", options);
+        const players = await fetch("/query")
+            .then(res => res.json())
+            .then((data) => {
+                containers.style.display = 'grid';
+                data.forEach(player => {
+                    const images = document.createElement("img");
+                    images.setAttribute("class", "playersAll")
+                    images.src = player;
+                    containers.appendChild(images)
+                    // loader.style.display="none";
+
+
+                    //When to click each player, pass the src to the player1 and player3
+                    const playersAll = document.querySelectorAll(".playersAll");
+                    playersAll.forEach(players => {
+                        players.onclick = () => {
+                            const slicer = players.src.lastIndexOf("-");
+                            playerVar.src = players.src.slice(0, Number(slicer)) + ".png"
+                            playerVar2.src = players.src.slice(0, Number(slicer)) + ".png"
+
+                        }
+                    })
+
+
+                })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
+        if (containers.childElementCount == 0) {
+            // loader.style.display="none";
+            alert('No players has been found!')
+        }
+    }
+</script>
