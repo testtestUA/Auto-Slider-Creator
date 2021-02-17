@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,MAAM,EAAE,OAAO;CAElB",
+    "sources": [
+        "betkanyon.scss"
+    ],
+    "names": [],
+    "file": "betkanyon.css"
+}

@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.btn {
+    font-size: 1.6rem;
+}
+
+html {
+    font-size: 10px;
+    overflow: scroll;
+}
+
+body {
+   
+    image-rendering: -webkit-optimize-contrast;
+    line-height: 0.5;
+    background-color: rgb(216, 216, 216);
+
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-danger {
+    background-color: rgb(251, 90, 62);
+    border: rgb(251, 90, 62) 1px solid;
+}
+
+.btn-danger:hover {
+    background-color: rgb(212, 76, 52);
+}
+
+.form-search {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0rem;
+
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    height: 58px;
+}
+
+.game-name-container {
+
+    border-radius: 7px;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 600px;
+    flex-direction: column;
+    min-height: 300px;
+    margin-top: 2rem;
+
+    form {
+        min-width: 700px;
+    }
+}
+
+.game-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-holder {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+
+    input {
+        height: 38px;
+
+    }
+}
+
+input {
+    font-size: 1.9rem;
+}
+
+.text-holder {
+
+    max-width: 600px;
+
+    img {
+        max-height: 50px;
+        max-width: 50px;
+
+    }
+}
+
+.team-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    gap: 20px;
+}
+
+.team-logos-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+//Banner Area Here
+.banner-container {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    width: 1200px;
+    height: 336px;
+    padding-left: 65px;
+    background-color: #fff;
+    background-image: url("bg2.jpg");
+    display: flex;
+    
+}
+
+.left-side {
+    white-space: nowrap;
+    width: 350px;
+    height: 336px;
+    display: flex;
+    flex-direction: column;
+}
+
+.league-logo {
+    width: 90px;
+    height: 40px;
+}
+
+.date {
+    font-size: 2rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.team-names {
+
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    gap: 10px;
+    font-size: 3.6rem;
+
+    .orange {
+        color: #e74c3c;
+    }
+
+    .dark {
+        color: #2c3e50;
+    }
+
+}
+
+.team-logos {
+    margin-top: 1rem;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        max-height: 70px;
+        max-width: 70px;
+    }
+
+    p {
+        font-size: 3.5rem;
+        font-weight: 600;
+        opacity: 80%;
+    }
+}
+
+
+.team-odds {
+    display: flex;
+    justify-content: space-between;
+    width: 222px;
+    height: 38px;
+    margin-top: 2.3rem;
+}
+
+.odd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 64px;
+    color: #2c3e50;
+    border: solid 2px #2c3e50;
+    border-radius: 4px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.right-side {
+    position: relative;
+    display: flex;
+    width: 850px;
+    height: 336px;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 0;
+        
+    }
+
+    button {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+.team-player {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+    height: 100%;
+}
+
+//image list 1
+.image-list-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 336px;
+    overflow: auto;
+    width: 200px;
+    background-color: rgb(231, 227, 227);
+}
+.player1 , .player2{
+cursor: pointer;
+}
+.player-fetch{
+    display: flex;
+}
+
+.player1-image{
+    left: 100px;
+    
+}
+
+.drag1 {
+    z-index: 3;
+}
+
+.drag3{
+    z-index: 3;
+}
+
+.player2-image{
+    left: 300px;
+}
+
+.wrapper{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.zoom{
+    max-height: 400px;
+}
+.button-wrapper{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    width: 1200px;
+    
+    justify-content: space-between;
+}
+.banner-render{
+    display: flex;
+}
+
+//MOBILE SIZE 744*400
+.grid {
+    background-image: url("bg-mb.png");
+    display: grid;
+    width: 744px;
+    height: 400px;
+    grid-template-columns: 0fr 500px;
+    grid-template-rows: 400px;
+    background-color: #fff;
+    overflow-y: hidden;
+
+    
+}
+
+
+article{
+    
+
+    white-space: nowrap;
+    padding-top: 2rem;
+    padding-left: 50px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+.players {
+    position: relative;
+    display: flex;
+    
+}
+.team-m-player {
+    position: absolute;
+    
+}
+
+.drag4 {
+    right: 50px;
+}
+.drag3 {
+    left: 50px;
+}
+
+.drag1:hover , .drag2:hover , .drag3:hover , .drag4:hover {
+    opacity: 70%;
+}
+
+//toggle classlist
+.order {
+    
+    z-index: 4;
+   
+}
+
+.box {
+   
+    height: 100px;
+    
+}
+
+.image-containers {
+    overflow: auto;
+    width: 200px;
+    height: 300px;
+    max-height: 300px;
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(186px));
+    img {
+        max-width: 200px;
+        max-height: 100px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        
+    }
+
+    img:hover {
+        opacity: 60%;
+    }
+    
+}
+
+//flexbox
+
+.flex {
+    display: flex;
+    &-jc-ctr {
+        justify-content: center;
+    }
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-ai-ctr{
+        align-items: center;
+    }
+}
+
+.loader {
+    display: none;
+}
+
+.input-container {
+
+    gap: 10px;
+    input {
+        max-width: 150px;
+    }
+
+    button{
+      height: 35px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back , .next, .page-number {
+   
+    position: absolute;
+}
+.next {
+    margin-left: 60px;
+}
+.page-number {
+    margin-left: 120px;
+}
